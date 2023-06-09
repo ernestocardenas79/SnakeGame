@@ -1,1 +1,1 @@
-# SwormGame
+# SnakeGame
