@@ -1,23 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SwormGame;
+﻿namespace SwormGame;
 internal class Game
 {
     internal Settings Settings { get; init; }
     private readonly Engine engine;
 
-    internal Game(Settings settings) { 
+    internal Game(Settings settings)
+    {
         Settings = settings;
-
-        engine = new Engine(settings, new Canvas(settings));
+        engine = new Engine(settings, new Canvas(settings), new Controller());
+        engine.Start();
     }
 
     internal void Start()
     {
-        engine.Start();
+        // engine.Start();
+    }
+
+    internal void EndGame()
+    {
+        engine.isGaming = false;
     }
 }
