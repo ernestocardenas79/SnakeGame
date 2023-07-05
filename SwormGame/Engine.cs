@@ -147,5 +147,6 @@ internal class Engine
             }
         }
         Grid = grid;
+        _canvas.DebugInfo(rndX, rndY, flow.ToString());
     }
 }

@@ -44,4 +44,12 @@ internal class Canvas
             Console.Write(_settings.edgeSymbol);
         }
     }
+
+    internal void DebugInfo(int posX, int posY, string flow)
+    {
+        Console.SetCursorPosition(0, _settings.canvasHeight + 5);
+        Console.WriteLine("Position X: {0}", posX);
+        Console.WriteLine("Position Y: {0}", posY);
+        Console.WriteLine("Flow: {0}", flow);
+    }
 }
