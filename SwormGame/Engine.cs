@@ -93,7 +93,7 @@ internal class Engine
                 grid[i, j] = emptyCell;
             }
         }
-        var flow = Flow.Left;
+        var flow = Flow.Up;
         if (Flow.Left == flow)
         {
             if (rndX - 1 > 0)
@@ -105,6 +105,45 @@ internal class Engine
             {
                 grid[_settings.canvasWidth - 1, rndY] = _settings.snakeSymbol;
                 rndX = _settings.canvasWidth - 1;
+            }
+        }
+        if (Flow.Rigth == flow)
+        {
+            if (rndX + 1 < _settings.canvasWidth)
+            {
+                grid[++rndX, rndY] = _settings.snakeSymbol;
+
+            }
+            else
+            {
+                grid[0, rndY] = _settings.snakeSymbol;
+                rndX = 0;
+            }
+        }
+        if (Flow.Up == flow)
+        {
+            if (rndY - 1 > 0)
+            {
+                grid[rndX, --rndY] = _settings.snakeSymbol;
+
+            }
+            else
+            {
+                grid[rndX, _settings.canvasHeight - 1] = _settings.snakeSymbol;
+                rndY = _settings.canvasHeight - 1;
+            }
+        }
+        if (Flow.Down == flow)
+        {
+            if (rndY + 1 < _settings.canvasHeight)
+            {
+                grid[rndX, ++rndY] = _settings.snakeSymbol;
+
+            }
+            else
+            {
+                grid[rndX, 0] = _settings.snakeSymbol;
+                rndY = 0;
             }
         }
         Grid = grid;

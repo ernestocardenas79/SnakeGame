@@ -42,6 +42,18 @@ internal class Controller
             {
                 LeftFlowEvent?.Invoke();
             }
+            if (key.Key == ConsoleKey.RightArrow)
+            {
+                LeftFlowEvent?.Invoke();
+            }
+            if (key.Key == ConsoleKey.UpArrow)
+            {
+                LeftFlowEvent?.Invoke();
+            }
+            if (key.Key == ConsoleKey.DownArrow)
+            {
+                LeftFlowEvent?.Invoke();
+            }
         }
     }
 }
